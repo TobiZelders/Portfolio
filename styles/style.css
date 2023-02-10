@@ -1,7 +1,10 @@
-<style >
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    font-family: 'Poppins', sans-serif;
+    background-color: #464663;
+    color: #ffffff;
+    padding: 0;
+    margin: 0;
 }
 
 header {
@@ -18,4 +21,28 @@ footer {
     padding: 10px;
 }
 
-</style >
+section{
+    display: grid;
+    place-items: center;
+    align-content: center;
+    min-height: 100vh;
+}
+
+.hidden{
+    opacity: 0;
+    filter: blur(5px);
+    transition: 2s;
+    transform: translateX(-50%)
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+@media(prefers-reduced-motion) {
+    .hidden{
+        transition: none;
+    }
+}
