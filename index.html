@@ -1,24 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+
 <head>
-  <title>My Portfolio</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>tobizelders</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <script defer src="app.js"></script>
 </head>
+
 <body>
   <header>
-    <h1>My Portfolio</h1>
+    <h3>Tobias Zelders</h3>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+    <a class="cta" href="#"><button>Contact</button></a>
   </header>
+
+
+
   <main>
+
+    <div class="about-me">
     <h2>About Me</h2>
-    <p>Welcome to my portfolio! I am a [insert your job title or description here].</p>
-    <h2>My Work</h2>
-    <ul>
-      <li><a href="#">Project 1</a></li>
-      <li><a href="#">Project 2</a></li>
-      <li><a href="#">Project 3</a></li>
-    </ul>
+    <p>
+      Welcome to my portfolio! I am a enthusiastic student trying out every bit of tech out there. 
+      </br>For now i'm looking for an intern ship to fuel my ever growing interest in the IT world,
+      </br>Or a part-time job as junior developer (C# / Python / Unity).
+    </p>
+    </div>
+
+
+    <div class="highlighted-projects">
+      <h2>Current projects</h2>
+      <ul class="hprojects">
+        <li><a href="#p1" style="color: #ffffff">Project 1</a></li>
+        <li><a href="#p2" style="color: #ffffff">Project 2</a></li>
+        <li><a href="#p3" style="color: #ffffff">Project 3</a></li>
+      </ul>
+    </div>
+    
+
   </main>
-  <footer>
-    <p>&copy; [Your Name] [Current Year]</p>
+
+  <section class="hidden" id="p1">
+    <h1>Project 1</h1>
+    <p>This was an augmented reality assignment</p>
+  </section>
+
+  <section class="hidden" id="p2">
+    <h1>Project 2</h1>
+    <p>This was assignment to make a robot that could help in the healthcare sector</p>
+  </section>
+
+  <section class="hidden" id="p3">
+    <h1>Project 3</h1>
+    <p>I participated in a game jam where we had to make a game within 3 days</p>
+  </section>
+
+
+
+  <footer class="footer-main">
+    <p>&copy; Tobias Zelders 2023</p>
   </footer>
+
 </body>
 </html>
