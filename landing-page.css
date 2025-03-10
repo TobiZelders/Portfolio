@@ -1,0 +1,39 @@
+
+
+h1 .landing-page{
+
+}
+
+.landing-intro {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 70px;
+}
+
+.landing-intro-content {
+    max-width: 1200px;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.landing-intro-text {
+    flex: 1;
+}
+
+.div-image {
+    flex: 1;
+    text-align: center;
+}
+
+.landing-profile-pic {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 8px solid white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
