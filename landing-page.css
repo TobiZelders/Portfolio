@@ -1,28 +1,62 @@
 
 
-h1 .landing-page{
 
-}
-
-.landing-intro {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 70px;
-}
+/* landing page intro */
 
 .landing-intro-content {
-    max-width: 1200px;
+    width: 100%;
     padding: 0 2rem;
-    display: flex;
+    display: block;
     align-items: center;
-    gap: 4rem;
+    margin: 150px auto;
 }
 
 .landing-intro-text {
     flex: 1;
 }
+
+/* landing page about */
+
+.landing-about {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.landing-section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--dark-color);
+}
+
+.landing-about-content {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.landing-about-text {
+    flex: 2;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.skill-tag {
+    background-color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    font-weight: 500;
+    color: var(--secondary-color)
+}
+
+/* landing page images */
 
 .div-image {
     flex: 1;
