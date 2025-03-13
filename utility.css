@@ -199,6 +199,12 @@
 .d-inline-flex { display: inline-flex; }
 .d-grid { display: grid; }
 
+/* ---------- Block ---------- */
+/* Float */
+.float-none { float: none; }
+.float-left { float: left; }
+.float-right { float: right; }
+
 /* ---------- Flex ---------- */
 /* Flex Direction */
 .flex-row { flex-direction: row; }
@@ -213,6 +219,8 @@
 .justify-content-between { justify-content: space-between; }
 .justify-content-around { justify-content: space-around; }
 .justify-content-evenly { justify-content: space-evenly; }
+.justify-content-left { justify-content: left; }
+.justify-content-right { justify-content: right; }
 
 /* Align Items */
 .align-items-start { align-items: flex-start; }
