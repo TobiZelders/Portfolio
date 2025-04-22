@@ -54,11 +54,17 @@ header {
 }
 
 .landing-social .space {
-    height: calc(30% - 3em);
+    height: calc(32% - 3em);
 }
 
 .landing-social a {
     cursor: pointer;
+    color: white;
+    text-decoration: none;
+}
+
+.landing-social a:hover {
+    color: aqua;
 }
 
 .landing-nav {
@@ -89,6 +95,7 @@ nav {
 }
 
 nav a {
+    text-decoration: none;
     font-size: 7vw;
     cursor: pointer;
     color: white;
