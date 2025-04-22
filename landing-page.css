@@ -115,3 +115,47 @@ nav a:hover {
     color: black;
     font-style: italic;
 }
+
+
+/* Matrix background */
+.matrix-bg {
+    position: fixed;
+    top: 2vw;
+    left: 2vw;
+    right: 2vw;
+    bottom: 2vw;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.matrix-column {
+    position: absolute;
+    top: 0;
+    width: 1em;
+    color: aqua;
+    font-size: 16px;
+    text-align: center;
+    text-shadow: 0 0 5px aqua;
+    animation: matrix-fall linear infinite;
+    opacity: 0;
+    animation: matrix-fall linear infinite;
+    animation-delay: calc(var(--column-delay) * 1s);
+}
+
+@keyframes matrix-fall {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    2% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}

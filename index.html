@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="landing-page.css">
 </head>
 <body>
+  <div class="matrix-bg" id="matrixBg"></div>
   <div class="border"></div>
     <header>
       <div></div>
@@ -28,5 +29,38 @@
         <a href="#">Contact</a>
       </nav>
     </header>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const matrixBg = document.getElementById('matrixBg');
+      const chars = "01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン";
+
+      // Calculate how many columns we need based on screen width
+      const columnCount = Math.floor(window.innerWidth / 20);
+
+      // Create columns
+      for (let i = 0; i < columnCount; i++) {
+        const column = document.createElement('div');
+        column.className = 'matrix-column';
+        column.style.left = `${(i * 20)}px`;
+        column.style.setProperty('--column-delay', i * 0.2); // Stagger the delays
+
+        // Random duration between 5-15 seconds
+        const duration = 5 + Math.random() * 10;
+        column.style.animationDuration = `${duration}s`;
+
+        // Create characters for this column
+        const charCount = 30;
+        for (let j = 0; j < charCount; j++) {
+          const char = document.createElement('div');
+          char.textContent = chars[Math.floor(Math.random() * chars.length)];
+          char.style.opacity = `${0.1 + Math.random() * 0.9}`;
+          column.appendChild(char);
+        }
+
+        matrixBg.appendChild(column);
+      }
+    });
+  </script>
 </body>
 </html>
