@@ -10,10 +10,10 @@
   <link rel="stylesheet" href="landing-page.css">
 </head>
 <body>
-  <div class="matrix-bg" id="matrixBg"></div>
   <div class="border"></div>
+  <canvas id="matrixCanvas"></canvas>
     <header>
-      <div></div>
+
       <div class="landing-social">
         <div class="space"></div>
         <p><a href="https://github.com/TobiZelders">github</a> / <a href="#">resume</a> / <a href="https://www.linkedin.com/in/tobias-zelders-600688211/">linked-in</a> --- @2025</p>
@@ -32,35 +32,52 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const matrixBg = document.getElementById('matrixBg');
-      const chars = "01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン";
+      const canvas = document.getElementById('matrixCanvas');
+      const ctx = canvas.getContext('2d');
+      const border = document.querySelector('.border');
 
-      // Calculate how many columns we need based on screen width
-      const columnCount = Math.floor(window.innerWidth / 20);
-
-      // Create columns
-      for (let i = 0; i < columnCount; i++) {
-        const column = document.createElement('div');
-        column.className = 'matrix-column';
-        column.style.left = `${(i * 20)}px`;
-        column.style.setProperty('--column-delay', i * 0.2); // Stagger the delays
-
-        // Random duration between 5-15 seconds
-        const duration = 5 + Math.random() * 10;
-        column.style.animationDuration = `${duration}s`;
-
-        // Create characters for this column
-        const charCount = 30;
-        for (let j = 0; j < charCount; j++) {
-          const char = document.createElement('div');
-          char.textContent = chars[Math.floor(Math.random() * chars.length)];
-          char.style.opacity = `${0.1 + Math.random() * 0.9}`;
-          column.appendChild(char);
-        }
-
-        matrixBg.appendChild(column);
+      function resizeCanvas() {
+        canvas.width = border.clientWidth;
+        canvas.height = border.clientHeight;
       }
+
+      resizeCanvas();
+
+      const chars = "01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン";
+      const charArray = chars.split('');
+
+      const fontSize = 20;
+      let columns = Math.floor(canvas.width / fontSize);
+      let drops = Array(columns).fill(0);
+
+      function draw() {
+        ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = "#00fae5";
+        ctx.font = fontSize + "px monospace";
+
+        for (let i = 0; i < drops.length; i++) {
+          const text = charArray[Math.floor(Math.random() * charArray.length)];
+          ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+          if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
+          }
+
+          drops[i]++;
+        }
+      }
+
+      setInterval(draw, 33);
+
+      window.addEventListener('resize', () => {
+        resizeCanvas();
+        columns = Math.floor(canvas.width / fontSize);
+        drops = Array(columns).fill(0);
+      });
     });
   </script>
+
 </body>
 </html>
